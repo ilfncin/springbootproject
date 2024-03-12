@@ -27,6 +27,17 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- If you are building a web site for your business, you probably need to add some management services. 
+			 Spring Boot provides several such services (such as health, audits, beans, and more) 
+			 with its actuator module.
+			 
+			 curl http://localhost:8080/actuator/health
+			{"status":"UP"}
+		-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
