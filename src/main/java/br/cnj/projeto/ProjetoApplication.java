@@ -2,6 +2,7 @@ package br.cnj.projeto;
 
 import java.util.Arrays;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,16 +15,24 @@ import org.springframework.context.annotation.Bean;
  * 		@ComponentScan: Tells Spring to look for other components, configurations, and services in the com/example package, letting it find the controllers.
  */
 @SpringBootApplication
-public class ProjetoApplication {
+public class ProjetoApplication implements CommandLineRunner {
+	
+	@Autowired
+	private CasoJudicial casoJudicial;
 
 	public static void main(String[] args) {
 		System.out.println("INICIO");
 		SpringApplication.run(ProjetoApplication.class, args);
 		System.out.println("FIM");
 	}
+	
+	@Override
+	public void run(String... args) throws Exception {
+		System.out.println(casoJudicial.finalizarCusto(100, "MS", 2017));
+	}
 
 	@Bean
-	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
+	private CommandLineRunner commandLineRunner(ApplicationContext ctx) {
 		return args -> {
 
 			System.out.println("Let's inspect the beans provided by Spring Boot:");
