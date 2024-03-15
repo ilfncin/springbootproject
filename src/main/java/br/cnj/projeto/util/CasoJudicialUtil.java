@@ -1,15 +1,15 @@
-package br.cnj.projeto;
+package br.cnj.projeto.util;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class CasoJudicial {
+public class CasoJudicialUtil {
+		
+	private CustoJudicialUtil custoJudicial;
 	
-	private CustoJudicial custoJudicial;
+	private TaxaJudicialUtil taxaJudicial;
 	
-	private TaxaJudicial taxaJudicial;
-	
-	public CasoJudicial(CustoJudicial custoJudicial, TaxaJudicial taxaJudicial) {
+	public CasoJudicialUtil(CustoJudicialUtil custoJudicial, TaxaJudicialUtil taxaJudicial) {
 		this.custoJudicial = custoJudicial;
 		this.taxaJudicial = taxaJudicial;
 	}
@@ -19,5 +19,7 @@ public class CasoJudicial {
 		custo += taxaJudicial.adicionarTaxa(estado);
 		return custo;
 	}
+	
+	
 
 }

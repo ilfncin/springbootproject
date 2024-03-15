@@ -1,9 +1,9 @@
-package br.cnj.projeto;
+package br.cnj.projeto.util;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class TaxaJudicial {
+public class TaxaJudicialUtil {
 	
 	public double adicionarTaxa(String estado) {
 		double taxa = 10.0;

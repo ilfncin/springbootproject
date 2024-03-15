@@ -8,6 +8,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+
+import br.cnj.projeto.util.CasoJudicialUtil;
 /**
  * @SpringBootApplication is a convenience annotation that adds all of the following:
  * 		@Configuration: Tags the class as a source of bean definitions for the application context.
@@ -18,7 +20,7 @@ import org.springframework.context.annotation.Bean;
 public class ProjetoApplication implements CommandLineRunner {
 	
 	@Autowired
-	private CasoJudicial casoJudicial;
+	private CasoJudicialUtil casoJudicial;
 
 	public static void main(String[] args) {
 		System.out.println("INICIO");
@@ -32,7 +34,7 @@ public class ProjetoApplication implements CommandLineRunner {
 	}
 
 	@Bean
-	private CommandLineRunner commandLineRunner(ApplicationContext ctx) {
+	protected CommandLineRunner commandLineRunner(ApplicationContext ctx) {
 		return args -> {
 
 			System.out.println("Let's inspect the beans provided by Spring Boot:");

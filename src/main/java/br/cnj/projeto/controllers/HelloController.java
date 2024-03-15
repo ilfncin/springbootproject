@@ -1,4 +1,4 @@
-package br.cnj.projeto.controller;
+package br.cnj.projeto.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
